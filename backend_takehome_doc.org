@@ -1,0 +1,69 @@
+
+We expect you to understand our architecure. We will test your coding skills too - debugging,
+testing etc. Primarily, though, we are testing your ability to read our code, understand it, and
+work with it.
+
+Every architecure has an opinion on how you should use it. You should understand this opinion. We'll
+give you plenty of time to ask us questions.
+
+Commands:
+- start the backend:
+    $ npm run serve
+- run the unit tests
+    $ npm run units
+- run the end-to-end tests
+    $ npm run e2es
+
+Key Areas of Interest:
+- example feature:
+  - route: /api/giveTokensForSocialAction/create
+  - this route will give you an example of a similar feature
+  - look here for clues here on how you should design your implementation
+
+Your Tasks:
+1. Fix the tests
+   - the unit tests are currently broken; we need you to fix them
+   - use your best judgment on how to do this
+2. Write a feature that gives out tokens to users.
+   - I want to call a route and give X tokens to the user-base
+3. Write tests
+   - test your feature
+
+Your Feature in Detail:
+- I want to call a route that lets me distribute tokens to the user base
+- I will supply two pieces of data as input
+  - the number of tokens I want to distribute
+  - the ID for the brand that owns the token
+- you will iterate through the users, giving out a fraction of the total to each user
+- every user will receive the same number of tokens
+  - if I am distributing 10 tokens, and there are 2 users, each user should receive 5 tokens
+  - you can give out fractions of a token - like 0.2 tokens
+- each user will receive tokens for the brand in question only
+  - we supply the brand ID in the request
+  - a user will have a different number of tokens for each brand
+    - for example, a user may have 10 Nike tokens and 3 Addidas tokens
+    - your route will distribute tokens for only one brand
+- you can assume that the brand already exists
+- we want a record of every token distribution
+  - when I call the distribution route, I want a record of me calling that route with a timestamp
+    and the data I passed in
+
+Testing:
+- you should write automated tests for your feature
+  - unit tests in Jest
+  - E2E tests in Cypress
+- you can cover as much of your code as you want
+  - however, if we find bugs in your code, that's on you
+- you must write at least some unit tests and some E2E tests
+  - one of each is fine
+- write tests to the level of coverage that you think is best
+
+What to Think About:
+- We expect you to read our code and learn about our architecture
+- Keep in mind that we are looking for consistency
+  - There is no sense in doing something in a radically different way from how we already do it
+- You will have a chance to defend your decisions
+  - We will ask you questions after you hand your work in - if you complete it
+  - Maybe, you'll have some ideas we haven't thought of
+- If something is confusing, be sure to ask us about it before you start your project. You will have
+  one hour to do so in your second interview.
