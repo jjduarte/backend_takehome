@@ -7,6 +7,7 @@
         "kill_nodemon_cypress": "./scripts/kill_nodemon.sh '.*cypress'",
         "co": "npm run cypress:open",
         "cypress:run": "./scripts/kill_nodemon.sh '.*cypress'; DEBUG=cypress:electron node_modules/.bin/nodemon -x 'node_modules/.bin/cypress run' --ignore './src/testdata/**' --ignore './db/**' --ignore pipes_output.log app.js",
+        "cypress:open": "./scripts/kill_nodemon.sh '.*cypress'; DEBUG=cypress:electron node_modules/.bin/nodemon -x 'node_modules/.bin/cypress open'  --ignore './src/testdata/**' --ignore './db/**' --ignore pipes_output.log app.js",
         "e2es": "npm run kill_nodemon_cypress; DEBUG=cypress:electron node_modules/.bin/nodemon -x 'node_modules/.bin/cypress run -c ignoreTestFiles=**/widget/** --spec \"cypress/integration/**/*\"' --ignore './src/testdata/**' --ignore './db/**' --ignore pipes_output.log",
         "units": "./scripts/kill_nodemon.sh 'jest' && node_modules/.bin/nodemon -x 'jest --config ./jest.config.js' --ignore './src/testdata/**' --ignore './db/**' --ignore pipes_output.log",
         "once_e2es": "npm run once_e2es_backend; npm run once_e2es_fullstack",
