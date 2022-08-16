@@ -12,7 +12,8 @@
         "units": "./scripts/kill_nodemon.sh 'jest' && node_modules/.bin/nodemon -x 'jest --config ./jest.config.js' --ignore './src/testdata/**' --ignore './db/**' --ignore pipes_output.log",
         "once_e2es": "npm run once_e2es_backend; npm run once_e2es_fullstack",
         "once_units": "jest --config ./jest.config.js",
-        "serve": "./scripts/kill_nodemon.sh app.js; export SEED_WITH_TEST_DATA=true && rm -f ./db/* && node_modules/.bin/nodemon --ignore './src/testdata/**' --ignore './db/**' --ignore pipes_output.log app.js"
+        "serve": "./scripts/kill_nodemon.sh app.js; export SEED_WITH_TEST_DATA=true && rm -f ./db/* && node_modules/.bin/nodemon --ignore './src/testdata/**' --ignore './db/**' --ignore pipes_output.log app.js",
+        "debug": "./scripts/kill_nodemon.sh app.js; export SEED_WITH_TEST_DATA=true && rm -f ./db/* && node_modules/.bin/nodemon --inspect --ignore './src/testdata/**' --ignore './db/**' --ignore pipes_output.log app.js"
     },
     "repository": {
         "type": "git",
